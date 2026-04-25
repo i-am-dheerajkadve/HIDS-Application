@@ -1,0 +1,1315 @@
+2026-04-07 15:42:17,229 [INFO] Starting HIDS scan #1
+2026-04-07 15:42:17,273 [INFO] Starting HIDS scan #2
+2026-04-07 15:42:17,273 [INFO] HIDS monitoring started (interval=60s)
+2026-04-07 15:42:21,613 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.69.111.143:5000
+2026-04-07 15:42:21,643 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-07 15:42:23,231 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-07 15:42:23,231 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-07 15:42:23,437 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-07 15:42:23,437 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-07 15:42:26,707 [INFO] Scan #2 completed in 9.32s
+2026-04-07 15:42:26,707 [INFO] Scan #2 completed in 9.48s
+2026-04-07 15:42:40,023 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:40] "GET / HTTP/1.1" 200 -
+2026-04-07 15:42:40,757 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:40] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:42:41,507 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:42:41,624 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:41] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:42:41,918 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:41] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:42:41,921 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-07 15:42:47,408 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:47] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:42:48,624 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:42:49,566 [INFO] Starting HIDS scan #3
+2026-04-07 15:42:49,589 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:49] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:42:50,608 [WARNING] [MEDIUM] Resource Abuse: High CPU usage by System Idle Process (123.2%) — possible cryptominer
+2026-04-07 15:42:53,758 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:53] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:42:54,410 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:54] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:42:54,589 [INFO] Starting HIDS scan #4
+2026-04-07 15:42:55,060 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:42:56,942 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:56] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:42:57,045 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:57] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:42:57,463 [INFO] 127.0.0.1 - - [07/Apr/2026 15:42:57] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:43:00,644 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:43:01,226 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:01] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:43:02,692 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:02] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:43:03,038 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:03] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:43:03,284 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:43:08,127 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:08] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:43:08,188 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:08] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:43:09,155 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:09] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:43:10,839 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:43:13,259 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:12] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:43:13,664 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:13] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:43:15,415 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:15] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:43:15,741 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:43:17,790 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:17] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:43:18,127 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:18] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:43:19,410 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:19] "GET /api/connections HTTP/1.1" 200 -
+2026-04-07 15:43:22,403 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:22] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:43:24,860 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:43:27,365 [INFO] Starting HIDS scan #5
+2026-04-07 15:43:30,526 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:30] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:43:32,911 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:32] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:43:39,877 [INFO] HIDS monitoring stopped
+2026-04-07 15:43:40,312 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:40] "POST /api/stop HTTP/1.1" 200 -
+2026-04-07 15:43:40,569 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:40] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:43:43,399 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:43] "GET /api/connections HTTP/1.1" 200 -
+2026-04-07 15:43:47,331 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:43:47,623 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:47] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:43:47,643 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:47] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:43:48,856 [INFO] 127.0.0.1 - - [07/Apr/2026 15:43:48] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:43:48,973 [WARNING] [MEDIUM] Resource Abuse: High CPU usage by python.exe (96.6%) — possible cryptominer
+2026-04-07 15:45:52,995 [INFO] Starting HIDS scan #1
+2026-04-07 15:45:52,997 [INFO] Starting HIDS scan #2
+2026-04-07 15:45:52,997 [INFO] HIDS monitoring started (interval=60s)
+2026-04-07 15:46:00,367 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.69.111.143:5000
+2026-04-07 15:46:00,400 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-07 15:46:00,587 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:00] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:01,271 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-07 15:46:01,271 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-07 15:46:01,339 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:01,373 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:01] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:46:01,497 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-07 15:46:01,499 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-07 15:46:02,136 [INFO] Scan #2 completed in 9.09s
+2026-04-07 15:46:02,137 [INFO] Scan #2 completed in 9.14s
+2026-04-07 15:46:03,038 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:03] "GET / HTTP/1.1" 200 -
+2026-04-07 15:46:03,401 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:03] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:03,908 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:04,089 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:04] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:46:05,727 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:05] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:46:11,160 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:11] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:11,647 [INFO] Starting HIDS scan #3
+2026-04-07 15:46:13,856 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:14,658 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:14] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:46:16,791 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:16] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:46:22,066 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:22,908 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:22] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:24,626 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:24] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:46:24,627 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:24] "GET /api/connections HTTP/1.1" 200 -
+2026-04-07 15:46:24,709 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:24] "GET /api/signatures HTTP/1.1" 200 -
+2026-04-07 15:46:26,756 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:26] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:30,661 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:32,074 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:32] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:46:32,262 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:32] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:37,358 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:36] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:46:39,824 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:39] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:43,123 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:43] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:46:43,377 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:43,627 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:43] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:43,786 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:43] "GET /api/connections HTTP/1.1" 200 -
+2026-04-07 15:46:45,005 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:45] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:46:45,424 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:45] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:47,560 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:49,643 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:49] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:46:49,986 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:49] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:51,208 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:51] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:46:53,142 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:53] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:46:58,214 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:46:59,258 [INFO] 127.0.0.1 - - [07/Apr/2026 15:46:59] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-07 15:47:02,011 [INFO] 127.0.0.1 - - [07/Apr/2026 15:47:02] "GET /api/status HTTP/1.1" 200 -
+2026-04-07 15:47:02,794 [INFO] Starting HIDS scan #4
+2026-04-07 15:47:05,795 [INFO] 127.0.0.1 - - [07/Apr/2026 15:47:05] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:47:19,928 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:47:20,006 [INFO] 127.0.0.1 - - [07/Apr/2026 15:47:20] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-07 15:47:21,203 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-07 15:47:21,555 [INFO] 127.0.0.1 - - [07/Apr/2026 15:47:21] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:13:53,072 [INFO] Starting HIDS scan #1
+2026-04-17 09:13:53,072 [INFO] Starting HIDS scan #2
+2026-04-17 09:13:53,072 [INFO] HIDS monitoring started (interval=60s)
+2026-04-17 09:13:56,451 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.231.66.143:5000
+2026-04-17 09:13:56,451 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-17 09:13:56,737 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-17 09:13:56,737 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-17 09:13:57,126 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-17 09:13:57,127 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-17 09:14:00,373 [INFO] Scan #2 completed in 7.3s
+2026-04-17 09:14:00,374 [INFO] Scan #2 completed in 7.27s
+2026-04-17 09:14:12,009 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:12] "GET / HTTP/1.1" 200 -
+2026-04-17 09:14:13,114 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:13] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:14:13,620 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:14:15,973 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-17 09:14:18,908 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:18] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:14:19,532 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:19] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:14:22,107 [INFO] Starting HIDS scan #3
+2026-04-17 09:14:22,932 [WARNING] [MEDIUM] Resource Abuse: High CPU usage by System Idle Process (136.6%) — possible cryptominer
+2026-04-17 09:14:24,860 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:24] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:14:25,645 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:14:26,433 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:26] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:14:26,782 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:26] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:14:29,868 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:29] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:14:34,050 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:14:34,971 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:34] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:14:35,879 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:35] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:14:36,260 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:36] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:14:36,690 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:14:38,346 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:38] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:14:38,883 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:38] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:14:40,801 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:40] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:14:43,465 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:14:44,261 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:44] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:14:47,717 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:47] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:14:48,989 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:14:49,268 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:49] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:14:51,311 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:51] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:14:53,247 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:53] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:14:56,578 [INFO] 127.0.0.1 - - [17/Apr/2026 09:14:56] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:15:02,894 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:15:03,249 [INFO] Starting HIDS scan #4
+2026-04-17 09:15:05,316 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:05] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:15:05,551 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:05] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:15:07,259 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:07] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:15:14,033 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:15:27,908 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:27] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:15:28,166 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:28] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:15:28,261 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:28] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:15:29,428 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:15:29,967 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:29] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:15:30,023 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:30] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:15:30,161 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:15:30,575 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:30] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:15:30,764 [WARNING] [MEDIUM] Resource Abuse: High CPU usage by chrome.exe (94.9%) — possible cryptominer
+2026-04-17 09:15:38,538 [WARNING] [MEDIUM] Resource Abuse: High CPU usage by python.exe (93.3%) — possible cryptominer
+2026-04-17 09:15:44,548 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:44] "GET /api/processes HTTP/1.1" 200 -
+2026-04-17 09:15:44,737 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:44] "GET /api/processes HTTP/1.1" 200 -
+2026-04-17 09:15:44,985 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:44] "GET /api/processes HTTP/1.1" 200 -
+2026-04-17 09:15:45,019 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:45] "GET /api/processes HTTP/1.1" 200 -
+2026-04-17 09:15:45,103 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:45] "GET /api/processes HTTP/1.1" 200 -
+2026-04-17 09:15:45,105 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-17 09:15:45,112 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-17 09:15:45,147 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-17 09:15:45,154 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-17 09:15:45,308 [INFO] Scan #4 completed in 83.05s
+2026-04-17 09:15:45,309 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:45] "POST /api/scan HTTP/1.1" 200 -
+2026-04-17 09:15:45,311 [INFO] Scan #4 completed in 37.78s
+2026-04-17 09:15:58,307 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:58] "GET / HTTP/1.1" 200 -
+2026-04-17 09:15:59,184 [INFO] 127.0.0.1 - - [17/Apr/2026 09:15:59] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:00,543 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:00,907 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:00] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:02,299 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:02] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:02,736 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-17 09:16:08,010 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:08] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:09,753 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:09,756 [INFO] Starting HIDS scan #5
+2026-04-17 09:16:09,760 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:09] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:10,219 [WARNING] [MEDIUM] Resource Abuse: High CPU usage by System Idle Process (145.5%) — possible cryptominer
+2026-04-17 09:16:11,750 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:11] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:12,766 [INFO] Starting HIDS scan #6
+2026-04-17 09:16:13,813 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:13] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:14,744 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:15,217 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:15] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:17,549 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:17] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:18,830 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:18] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:21,441 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:22,483 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:22] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:23,548 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:23] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:25,357 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:25,419 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:25] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:25,858 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:25] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:27,699 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:27] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:29,077 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:29] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:31,949 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:33,279 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:33] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:34,176 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:34] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:39,193 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:39] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:41,220 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:43,622 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:43] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:44,197 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:44] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:45,067 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:45] "GET /api/connections HTTP/1.1" 200 -
+2026-04-17 09:16:45,524 [INFO] Starting HIDS scan #7
+2026-04-17 09:16:46,196 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:46] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:50,748 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:50] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:50,912 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:50] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:51,387 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:51,914 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:51] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:54,520 [INFO] Starting HIDS scan #1
+2026-04-17 09:16:54,520 [INFO] Starting HIDS scan #2
+2026-04-17 09:16:54,521 [INFO] HIDS monitoring started (interval=60s)
+2026-04-17 09:16:57,196 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.231.66.143:5000
+2026-04-17 09:16:57,197 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-17 09:16:57,209 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-17 09:16:57,209 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: .token_seed.lock
+2026-04-17 09:16:57,255 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-17 09:16:57,255 [WARNING] [CRITICAL] Known Malware: Known malware hash matched: c++
+2026-04-17 09:16:57,423 [INFO] Scan #2 completed in 2.9s
+2026-04-17 09:16:57,423 [INFO] Scan #2 completed in 2.87s
+2026-04-17 09:16:57,547 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:57] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:57,867 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:57] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:16:58,044 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:16:58,208 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:58] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:16:59,029 [INFO] 127.0.0.1 - - [17/Apr/2026 09:16:59] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:16:59,377 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:17:00,048 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:00] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:17:02,222 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:02] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:17:04,638 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:04] "GET / HTTP/1.1" 200 -
+2026-04-17 09:17:04,883 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:04] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:17:04,922 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:17:05,553 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:05] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:17:05,892 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:05] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:17:07,223 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:17:07,408 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:07] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:17:07,846 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:07] "GET /api/alerts?limit=100 HTTP/1.1" 200 -
+2026-04-17 09:17:14,077 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:14] "GET /api/status HTTP/1.1" 200 -
+2026-04-17 09:17:15,679 [ERROR] Exception on /api/system [GET]
+Traceback (most recent call last):
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\app.py", line 37, in api_system
+    return jsonify(engine.get_system_health())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dheer\Videos\sentinel_hids\hids_new\hids_engine.py", line 282, in get_system_health
+    disk     = psutil.disk_usage("/")
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\__init__.py", line 2005, in disk_usage
+    return _psplatform.disk_usage(path)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\dheer\AppData\Local\Programs\Python\Python313\Lib\site-packages\psutil\_pswindows.py", line 280, in disk_usage
+    total, free = cext.disk_usage(path)
+                  ~~~~~~~~~~~~~~~^^^^^^
+SystemError: argument 1 (impossible<bad format char>)
+2026-04-17 09:17:15,714 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:15] "[35m[1mGET /api/system HTTP/1.1[0m" 500 -
+2026-04-17 09:17:18,062 [INFO] 127.0.0.1 - - [17/Apr/2026 09:17:18] "GET /api/processes HTTP/1.1" 200 -
