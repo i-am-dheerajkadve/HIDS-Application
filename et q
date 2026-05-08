@@ -1,0 +1,55 @@
+[33mcommit 8b3c81d7c7e382446289685c15a483ef200455f1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m)[m
+Author: Dheeraj <dheerajkadve@gmail.com>
+Date:   Wed May 6 08:16:53 2026 +0000
+
+    testing
+
+[33mcommit 6f2e29a6606cb051cc34bffc53855f5b36faf64c[m
+Author: Dheeraj <dheerajkadve@gmail.com>
+Date:   Wed May 6 07:21:28 2026 +0000
+
+    new-task-done
+    
+    Signed-off-by: Dheeraj <dheerajkadve@gmail.com>
+
+[33mcommit a37a1669f46dbbf97884528bbe8970e6dac594c6[m
+Author: Dheeraj <dheerajkadve@gmail.com>
+Date:   Wed May 6 06:34:16 2026 +0000
+
+    new file added to commit
+
+[33mcommit d122fb2a746d32428f1032c4a6044e2715ee4020[m
+Author: Dheeraj <dheerajkadve@gmail.com>
+Date:   Wed May 6 06:33:11 2026 +0000
+
+    comm
+
+[33mcommit 65b0074a28e394bf85a138ccf36daae8b141552a[m[33m ([m[1;31morigin/dev[m[33m)[m
+Author: Dheeraj <dheerajkadve@gmail.com>
+Date:   Tue May 5 10:34:28 2026 +0000
+
+    commit2
+
+[33mcommit 88c598917ece02849f29d3594210f3e07ddc3333[m
+Author: Dheeraj <dheerajkadve@gmail.com>
+Date:   Tue May 5 10:33:37 2026 +0000
+
+    commit1
+
+[33mcommit 7cc4eeee2bd6db79159c34213d974eeb7b082040[m
+Author: Dheeraj kadve <dheerajkadve@gmail.com>
+Date:   Mon Apr 27 23:42:24 2026 +0530
+
+    Rename dockerfile to Dockerfile
+
+[33mcommit 21c777131f888175b20559d5363525f9d63362b7[m
+Author: Dheeraj kadve <dheerajkadve@gmail.com>
+Date:   Sat Apr 25 23:26:08 2026 +0530
+
+    Add Dockerfile for Python application
+
+[33mcommit 56547c4728750b2529ecbde57f9e2f0fd4b161c1[m
+Author: Dheeraj kadve <dheerajkadve@gmail.com>
+Date:   Sat Apr 25 17:09:36 2026 +0000
+
+    Initial commit - HIDS project
