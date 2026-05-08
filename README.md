@@ -15,7 +15,7 @@
 - 30-point CPU & Memory history charts
 - Recent alert feed with click-to-expand details
 
-yes
+
 ### 🚨 Alerts Panel
 - Full alert history with severity filtering
 - Click any alert to expand JSON details
