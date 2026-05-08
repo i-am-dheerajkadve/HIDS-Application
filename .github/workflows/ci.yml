@@ -1,0 +1,33 @@
+name: web-application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        
+        - name: docker version 
+          run: docker --version
+
+        - name: docker build
+          run: docker build -t hids-app .
+
+        - name: docker run
+          run: docker run -d -p 8080:80 --name hids-container hids-app 
+        
+        - name: docker check
+          run: docker ps 
+        
+        - name: docker logs
+          run: docker logs hids-container
+
+
+
