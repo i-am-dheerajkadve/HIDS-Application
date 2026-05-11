@@ -46,4 +46,4 @@ jobs:
           --instance-ids "i-071f9332610d93d05" \
           --document-name "AWS-RunShellScript" \
           --parameters commands="docker pull ${{ secrets.DOCKER_USERNAME }}/hids-app:latest && docker stop hids-app || true && docker rm hids-app || true && docker run -d -p 80:5000 --name hids-app ${{ secrets.DOCKER_USERNAME }}/hids-app:latest" \
-          --region ap-south-1
+          --region eu-north-1
